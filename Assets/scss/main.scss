@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: rgb(18,5,106);
+    // background: linear-gradient(90deg, rgba(18,5,106,1) 0%, rgba(9,9,46,1) 52%, rgba(0,6,23,1) 100%);
+   background: radial-gradient(circle at 7% 18%, rgb(28 14 125) 0%, #050922 30%);
+}
+
+$blue: #0267FF;
+$purple: #9026FA;
+$orange: #FB6017;
+$lightblue: #2EBCFC;
+$text-nav: #8683A4;
+$blue-intensy: #4529F9;
+$blue-dark: #090A2D;
+$blue-opacity: #171D32;
+
+@import 'helpers';
+@import 'landing';

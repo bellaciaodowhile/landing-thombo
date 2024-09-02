@@ -1,0 +1,29 @@
+.hero-title {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(93deg, #fff, rgba(255, 255, 255, 0.62), rgba(0, 0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+header {
+    background: url('../images/hero-items.svg') no-repeat;
+    background-size: 100%;
+    background-position: left top;
+}
+article {
+    &.card-border {
+        border: 2px solid #0000;
+        transition: all 300ms ease-in-out;
+        &:hover {
+            border-color: $blue;
+        }
+    }
+    &.card-wallet {
+        background: $blue-opacity;
+    }
+    .icon {
+        background: $blue-intensy;
+    }
+}
+.card-footer {
+    background: linear-gradient(120deg, #171D33, #0000);
+}

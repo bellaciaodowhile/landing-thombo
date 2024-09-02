@@ -1,6 +1,7 @@
 <?php 
     require_once 'Config/Config.php'; #Constantes
-
+    require_once 'Helpers/Helpers.php'; # Helpers
+    
     $url = !empty($_GET['url']) ? $_GET['url'] : 'home/home';
     $arrUrl = explode('/',$url);
     $controller = $arrUrl[0];

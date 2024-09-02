@@ -76,6 +76,16 @@
         $token = $r1.'-'.$r2.'-'.$r3.'-'.$r4;
         return $token;
     }
-    
+
+    function headerLanding($data="")
+    {
+        $viewHeader = "Views/Templates/Landing/Header.php";
+        require_once ($viewHeader);        
+    }
+    function footerLanding($data="")
+    {
+        $viewFooter = "Views/Templates/Landing/Footer.php";
+        require_once ($viewFooter);        
+    }
 
 ?>

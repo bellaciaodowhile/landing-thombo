@@ -5,8 +5,13 @@
         }
         public function home() {
             $data['title_page'] = 'Controlador Home';
-            $this->views->getView($this, 'home', $data);
+            $data['js'] = ['landing.js'];
+            $data['title_page'] = 'Controlador Home';
+            $this->views->getView($this, 'Home', $data);
         }
+
+
+        
         public function addUser() {
             $data = $this->model->setUser('Ramon',22);
             print_r($data);
