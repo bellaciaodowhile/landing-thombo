@@ -27,3 +27,6 @@ article {
 .card-footer {
     background: linear-gradient(120deg, #171D33, #0000);
 }
+.icon-white {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}

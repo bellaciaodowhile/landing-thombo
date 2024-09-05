@@ -1,9 +1,6 @@
 
 <?php headerLanding($data); ?>
 
-
-
-
     <nav class="flex justify-between m-auto">
         <div class="cursor-pointer mt-10 ml-10 block lg:hidden trigger-sidebar fixed z-30">
             <div class="w-7 bg-white h-[1px]"></div>
@@ -25,9 +22,33 @@
                     </li>
                     <li>
                         <a href="#" class="text-nav">FAQs</a>
+                       
                     </li>
                 </ul>
-                <button type="button" class="rounded-full py-2 px-7 button-blue text-white">Log In</button>
+                <?php if (isset($_SESSION['login'])) { ?>
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="profile" class="capitalize text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><?php echo $_SESSION['nombre']; ?> <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="profile" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a href="<?php echo BASE_URL . 'buy'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Buy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo BASE_URL . 'logout'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                        </li>
+                        </ul>
+                    </div>
+
+                <?php } else { ?>
+                    <button type="button" class="rounded-full py-2 px-7 button-blue text-white trigger-login">Log In</button>
+                <?php } ?>
             </div>
         </div>
     </nav>
@@ -52,18 +73,105 @@
                             <a href="#" class="text-nav">FAQs</a>
                         </li>
                     </ul>
-                    <button type="button" class="rounded-full py-2 px-7 button-blue text-white">Log In</button>
+                    <?php if (isset($_SESSION['login'])) { ?>
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="profileNavbar" class="capitalize text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><?php echo $_SESSION['nombre']; ?> <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="profileNavbar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Buy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo BASE_URL . 'logout'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                        </li>
+                        </ul>
+                    </div>
+
+                <?php } else { ?>
+                    <button type="button" class="rounded-full py-2 px-7 button-blue text-white trigger-login">Log In</button>
+                <?php } ?>
                 </div>
             </div>
         </div>
         
     </aside>
+    <!-- Login and register -->
+
+    <section class="fixed w-full md:w-[400px] right-0 top-0 bg-white h-full p-5 md:p-10 py-20 z-30 flex flex-col justify-center login right-[-400px] transition-all ease-in-out duration-300 ">
+        <div class="float-right absolute top-[20px] right-[20px] cursor-pointer close-login">✕</div>
+        <form class="sign-in animate__animated animate__fadeIn">
+            <div class="text-xl font-bold">Welcome to back</div>
+            <div class="flex flex-col mt-4">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Login</small>
+                <input type="text" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" name="email" required autocomplete="off" placeholder="Email or username">
+            </div>
+            <div class="flex flex-col mt-3 relative field-password">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Password</small>
+                <input type="password" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" name="password" required placeholder="Enter password">
+                <i class="material-icons absolute text-gray-500 text-md right-[14px] top-[36px] cursor-pointer view-password">visibility</i>
+            </div>
+            <div class="mt-5 flex justify-between">
+                <label class="inline-flex items-center mb-5 cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer">
+                    <div class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <span class="ms-3 text-sm text-gray-900 dark:text-gray-300">Remember me</span>
+                </label>
+                <a href="#" class="text-blue-500 text-sm">Forgot password?</a>
+            </div>
+            <button type="submit" class="button-blue text-center py-2 rounded-md text-white w-full mt-6 font-semibold">
+                Sign In
+            </button>
+            <button type="button" class="text-center py-2 rounded-md text-blue-500 w-full mt-6 font-semibold trigger-sign">
+                Sign Up
+            </button>
+        </form>
+        <form class="sign-up hidden animate__animated animate__fadeIn">
+            <div class="text-xl font-bold">Register</div>
+            <div class="flex flex-col mt-4">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Name</small>
+                <input type="text" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" required placeholder="Joe" name="name">
+            </div>
+            <div class="flex flex-col mt-3">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Lastname</small>
+                <input type="text" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" required placeholder="Kingsman" name="lastname">
+            </div>
+            <div class="flex flex-col mt-3">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Email</small>
+                <input type="email" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" required placeholder="email@mail.com" name="email">
+            </div>
+            <div class="flex flex-col mt-3 relative field-password">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Password</small>
+                <input type="password" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" required placeholder="Enter password" name="password">
+                <i class="material-icons absolute text-gray-500 text-md right-[14px] top-[36px] cursor-pointer view-password">visibility</i>
+            </div>
+            <div class="flex flex-col mt-3 relative field-password">
+                <small class="text-slate-600 text-xs ml-3 mb-2">Repeat password</small>
+                <input type="password" class="p-3 bg-gray-100 text-black rounded-lg outline-0 text-sm" required placeholder="Enter password" name="repeat_password">
+                <i class="material-icons absolute text-gray-500 text-md right-[14px] top-[36px] cursor-pointer view-password">visibility</i>
+            </div>
+            <button type="submit" class="button-blue text-center py-2 rounded-md text-white w-full mt-6 font-semibold">
+                Sign Up
+            </button>
+            <button type="button" class="text-center py-2 rounded-md text-blue-500 w-full mt-6 font-semibold trigger-sign">
+                Sign In
+            </button>
+        </form>
+    </section>
+
+     <!-- End login and register -->
     
     <header id="home" class="min-h-screen absolute w-full left-0 top-0 pt-[211px] px-5 md:px-20 lg:px-32 z-10">
         <h1 class="hero-title text-4xl md:text-6xl font-extralight mt-10">Fastest & secure <br> crypto marketplace</h1>
         <p class="mt-4 max-w-xl text-white font-extralight opacity-70 leading-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, porro, culpa doloremque explicabo asperiores aperiam quod officia, quidem iusto ad perspiciatis laborum dolorem voluptatem earum sunt minima nobis error. Doloribus!</p>
         <div class="flex flex-wrap max-w-lg gap-2 md:gap-5 mt-5">
-            <button class="rounded-full text-white py-3 px-7 button-blue grow">Buy Now</button>
+            <button class="rounded-full text-white py-3 px-7 button-blue grow" href="<?php echo BASE_URL . 'buy'; ?>">Buy Now</button>
             <button class="rounded-full text-white py-3 px-7 button-purple grow">Sell</button>
             <button class="rounded-full text-white py-3 px-7 button-orange grow">Trade</button>
         </div>
@@ -241,13 +349,39 @@
         </section>
     </article>
     <footer class="px-5 md:px-20 lg:px-32 pt-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <img src="<?php echo media() . 'images/logo.png'; ?>" alt="Thombo Logo" class="w-32">
+        <div class="flex flex-col md:flex-row  md:justify-between flex-wrap gap-12">
             <div class="w-full md:max-w-sm">
                 <p class="text-white"><strong>Thombo</strong><span class="opacity-70"> is the best platform to buy, sell and exchange multiple cryptos with ease.</span></p>
-                <div class="flex items-center justify-center mt-5 flex-wrap gap-3">
+                <div class="flex items-center justify-center mt-5 xs:flex-wrap gap-3">
                     <input type="email" class="rounded-full p-3 bg-[#0000] border border-[#E5F2EF] opacity-70 text-white grow" placeholder="Your email">
                     <button class="button-blue rounded-full text-sm py-4 px-5">Subscribe</button>
                 </div>
+            </div>
+            <div class="text-white">
+                <div class="font-bold mb-3">Socials</div>
+                <ul class="flex flex-wrap gap-5">
+                    <li>
+                        <a class="opacity-50 text-sm" href="#">
+                            <img class="icon-white w-7" src="<?php echo media() . 'images/helpers/icons/socials/instagram.png'; ?>" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="opacity-50 text-sm" href="#">
+                            <img class="icon-white w-7" src="<?php echo media() . 'images/helpers/icons/socials/x.png'; ?>" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="opacity-50 text-sm" href="#">
+                            <img class="icon-white w-7" src="<?php echo media() . 'images/helpers/icons/socials/telegram.png'; ?>" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="opacity-50 text-sm" href="#">
+                            <img class="icon-white w-7" src="<?php echo media() . 'images/helpers/icons/socials/discord.png'; ?>" alt="">
+                        </a>
+                    </li>
+                </ul>
             </div>
             <ul class="text-white">
                 <li class="font-bold mb-3">Menu</li>
@@ -272,7 +406,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="opacity-50 text-sm" href="#">
+                    <a class="opacity-50 text-sm trigger-login trigger-login" href="javascript:void(0);">
                         Log In
                     </a>
                 </li>
