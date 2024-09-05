@@ -13,7 +13,9 @@ submit({
         let password = formRegister.querySelector('input[name="password"]').value
         let repeatPassword = formRegister.querySelector('input[name="repeat_password"]').value
 
-
+        const signUp = document.querySelector('.sign-up');
+        const signIn = document.querySelector('.sign-in');
+        
         AJAX({
             url: 'Usuarios/setUser',
             data: [{

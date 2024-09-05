@@ -135,6 +135,15 @@ button.button-outlined-blue-intensy:hover {
   margin-top: 100vh;
 }
 
+.active-breadcumb {
+  color: black;
+  font-weight: 500;
+}
+.active-breadcumb span.number {
+  background: #000;
+  color: white;
+}
+
 .hero-title {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(93deg, #fff, rgba(255, 255, 255, 0.62), rgba(0, 0, 0, 0));

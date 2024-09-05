@@ -55,3 +55,11 @@ button {
 .mt-screen {
     margin-top: 100vh;
 }
+.active-breadcumb {
+  color: black;
+  font-weight: 500;
+  span.number {
+    background: #000;
+    color: white;
+  }
+}
