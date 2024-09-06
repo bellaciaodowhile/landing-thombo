@@ -88,3 +88,70 @@ confirmAddNewCard.onclick = (e) => {
     }, 2000);
 }
 
+const sellItems = document.querySelectorAll('.sell-item');
+const currentSellImage = document.querySelector('.current-sell-image');
+const currentSellCoin = document.querySelectorAll('.current-sell-coin');
+sellItems.forEach(sellItem => {
+    sellItem.onclick = (e) => {
+        e.preventDefault();
+        const coinCurrent = sellItem.querySelector('.coin-current').textContent;
+        const coinCurrentPrice = sellItem.querySelector('.coin-current-price');
+        const coinCurrentImage = sellItem.querySelector('.coin-current-image');
+
+        
+        currentSellCoin.forEach(current => {
+            current.textContent = coinCurrent;
+        });
+        currentSellImage.src = coinCurrentImage.src;
+        console.log(coinCurrentImage.src)
+
+
+
+
+
+    }
+});
+
+const sellSend = document.querySelector('.sell-send');
+// const sellWallet = document.querySelector('.sell-wallet');
+const sellValue = document.querySelector('.sell-value');
+
+sellSend.onclick = (e) => {
+    e.preventDefault();
+
+    // if (sellWallet.value.trim() == '') {
+    //     Toastify({
+    //         text: 'Wallet required',
+    //         className: "success",
+    //     }).showToast();
+    // }
+    if (sellValue.value.trim() == '' || sellValue.value.trim() == 0) {
+        Toastify({
+            text: 'Cannot sell 0 currency',
+            className: "success",
+        }).showToast();
+        
+    } else {
+        Swal.fire({
+            title: "Are you sure?",
+            text: `You are selling ${sellValue.value.trim()} ${currentSellCoin[0].textContent.toUpperCase()}`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, sell!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Sold",
+                text: "Your sale has been processed.",
+                icon: "success"
+              });
+            }
+          });
+    }
+
+  
+
+
+}

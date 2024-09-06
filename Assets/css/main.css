@@ -42,90 +42,90 @@ body {
   font-family: "Rajdhani", sans-serif;
 }
 
-button {
+button, a {
   transition: all 300ms ease-in-out;
 }
-button.button-blue {
+button.button-blue, a.button-blue {
   background-color: #0267FF;
   color: #fff;
 }
-button.button-blue:hover {
+button.button-blue:hover, a.button-blue:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #3586ff;
 }
-button.button-outlined-blue-intensy {
+button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
   border: 1px solid #0267FF;
   color: #0267FF;
 }
-button.button-outlined-blue-intensy:hover {
+button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
   transform: translateY(-3px);
   background: #0267FF;
   color: #fff;
 }
-button.button-purple {
+button.button-purple, a.button-purple {
   background-color: #9026FA;
   color: #fff;
 }
-button.button-purple:hover {
+button.button-purple:hover, a.button-purple:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #aa58fb;
 }
-button.button-outlined-blue-intensy {
+button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
   border: 1px solid #9026FA;
   color: #9026FA;
 }
-button.button-outlined-blue-intensy:hover {
+button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
   transform: translateY(-3px);
   background: #9026FA;
   color: #fff;
 }
-button.button-orange {
+button.button-orange, a.button-orange {
   background-color: #FB6017;
   color: #fff;
 }
-button.button-orange:hover {
+button.button-orange:hover, a.button-orange:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #fc8249;
 }
-button.button-outlined-blue-intensy {
+button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
   border: 1px solid #FB6017;
   color: #FB6017;
 }
-button.button-outlined-blue-intensy:hover {
+button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
   transform: translateY(-3px);
   background: #FB6017;
   color: #fff;
 }
-button.button-lightblue {
+button.button-lightblue, a.button-lightblue {
   background-color: #2EBCFC;
   color: #fff;
 }
-button.button-lightblue:hover {
+button.button-lightblue:hover, a.button-lightblue:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #60ccfd;
 }
-button.button-outlined-blue-intensy {
+button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
   border: 1px solid #2EBCFC;
   color: #2EBCFC;
 }
-button.button-outlined-blue-intensy:hover {
+button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
   transform: translateY(-3px);
   background: #2EBCFC;
   color: #fff;
 }
-button.button-intensy {
+button.button-intensy, a.button-intensy {
   background-color: #4529F9;
   color: #fff;
 }
-button.button-intensy:hover {
+button.button-intensy:hover, a.button-intensy:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #705bfa;
 }
-button.button-outlined-blue-intensy {
+button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
   border: 1px solid #4529F9;
   color: #4529F9;
 }
-button.button-outlined-blue-intensy:hover {
+button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
   transform: translateY(-3px);
   background: #4529F9;
   color: #fff;

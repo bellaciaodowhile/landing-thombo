@@ -171,9 +171,9 @@
         <h1 class="hero-title text-4xl md:text-6xl font-extralight mt-10">Fastest & secure <br> crypto marketplace</h1>
         <p class="mt-4 max-w-xl text-white font-extralight opacity-70 leading-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, porro, culpa doloremque explicabo asperiores aperiam quod officia, quidem iusto ad perspiciatis laborum dolorem voluptatem earum sunt minima nobis error. Doloribus!</p>
         <div class="flex flex-wrap max-w-lg gap-2 md:gap-5 mt-5">
-            <button class="rounded-full text-white py-3 px-7 button-blue grow" href="<?php echo BASE_URL . 'buy'; ?>">Buy Now</button>
-            <button class="rounded-full text-white py-3 px-7 button-purple grow">Sell</button>
-            <button class="rounded-full text-white py-3 px-7 button-orange grow">Trade</button>
+            <a class="rounded-full text-white text-center py-3 px-7 button-blue grow" type="button" href="<?php echo BASE_URL . 'buy'; ?>">Buy Now</a>
+            <button class="rounded-full text-white text-center py-3 px-7 button-purple grow">Sell</button>
+            <button class="rounded-full text-white text-center py-3 px-7 button-orange grow">Trade</button>
         </div>
         <div class="flex flex-wrap max-w-xl mt-32 gap-10 items-center justify-center md:justify-start">
             <img src="<?php echo media() . 'images/coins/1.png'; ?>" alt="1" class="w-24 h-full p-1">

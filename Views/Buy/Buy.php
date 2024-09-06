@@ -194,15 +194,20 @@
             <div class="animate__animated animate__fadeIn hidden p-4 rounded-lg" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
             <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
                     <div class="bg-white rounded-xl p-5 md:p-10 h-auto realtime-card">
-                        <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="USDT" class="mx-auto w-20">
-                        <div class="mt-16 text-gray-400 text-center">You are buying</div>
+                        <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="USDT" class="mx-auto w-20 current-sell-image">
+                        <div class="mt-16 text-gray-400 text-center">You are selling</div>
                         <div class="flex flex-wrap md:flex-nowrap border-b border-gray-100 mt-5 justify-center">
-                            <input type="number" class="outline-0 text-black font-bold inline-block text-right w-48 pb-3 text-xl md:text-6xl realtime-input" value="20" min="0">
-                            <span class="current-coin font-light text-gray-500 block uppercase md:pt-4 text-md md:text-5xl">usdt</span>
+                            <input type="number" class="outline-0 text-black font-bold inline-block text-right w-48 pb-3 text-xl md:text-6xl realtime-input sell-value" value="20" min="0">
+                            <span class="current-coin font-light text-gray-500 block uppercase md:pt-4 text-md md:text-5xl current-sell-coin">usdt</span>
                         </div>
                         <div class="mt-20">
-                            <div class="flex flex-wrap justify-between text-sm">
-                                <div class="text-gray-300"><span>USDT</span> Price</div>
+                            <!-- <div class="relative field-password">
+                                <input type="password" id="floating_outlined" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer pr-12 sell-wallet" placeholder=" " />
+                                <i class="material-icons absolute text-gray-500 text-md right-[14px] top-[12px] cursor-pointer view-password">visibility</i>
+                                <label for="floating_outlined" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Wallet Address</label>
+                            </div> -->
+                            <div class="flex flex-wrap justify-between text-sm mt-10">
+                                <div class="text-gray-300"><span class="current-sell-coin">USDT</span> Price</div>
                                 <span class="text-gray-300">1.02 EUR</span>
                             </div>
                             <div class="flex flex-wrap justify-between text-sm my-3">
@@ -213,11 +218,128 @@
                                 <div class="text-gray-300">You pay</div>
                                 <span class="text-gray-800 font-bold"><span class="total-price">19.04</span> EUR</span>
                             </div>
+                            <div class="flex jutify-center">
+                                <button class="bg-gray-900 text-white w-56 font-semibold text-sm text-center p-3 rounded-full mx-auto mt-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sell-send">
+                                    Sell
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-5 md:p-10 flex flex-col justify-between">
+                    <div class="bg-white rounded-xl p-5 md:p-10">
+                        <div class="text-xl md:text-2xl font-bold">All cryptocurrencies</div>
+                        <div class="h-full overflow-y-auto max-h-[450px] py-3 text-white mt-10 cryptocurrencies-sell">
 
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/1.png'; ?>" alt="1" class="w-auto coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">Bitcoin</div>
+                                        <span class="text-gray-300 font-semibold coin-current">BTC</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="1" class="w-10 coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">Theter</div>
+                                        <span class="text-gray-300 font-semibold coin-current">USDT</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/2.png'; ?>" alt="1" class="w-auto coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">Bitcoin Cash</div>
+                                        <span class="text-gray-300 font-semibold coin-current">BCH</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/3.png'; ?>" alt="1" class="w-auto coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">Litecoin</div>
+                                        <span class="text-gray-300 font-semibold coin-current">LTC</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/4.png'; ?>" alt="1" class="w-auto coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">Monero</div>
+                                        <span class="text-gray-300 font-semibold coin-current">MRN</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/5.png'; ?>" alt="1" class="w-auto coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">ZCash</div>
+                                        <span class="text-gray-300 font-semibold coin-current">ZEC</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+                            <div class="flex flex-wrap bg-white shadow-xl rounded-lg p-3 justify-between cursor-pointer hover:-translate-y-1 transition-all duration-300 sell-item mb-5">
+                               <div class="flex gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/6.png'; ?>" alt="1" class="w-auto coin-current-image">
+                                    <div class="flex flex-col text-black">
+                                        <div class="text-sm font-bold">Ethereum</div>
+                                        <span class="text-gray-300 font-semibold coin-current">ETH</span>
+                                    </div>
+                               </div>
+                               <div class="flex flex-col items-end">
+                                   <span class="text-black text-xs font-bold"><span class="coin-current-price">22,01</span> USD</span>
+                                   <span class="text-green-400 text-xs flex items-center">
+                                        <i class="material-icons-outlined text-sm">arrow_outward</i> 123 USD&nbsp;<span class="text-xs"> (0,49%)</span>
+                                   </span>
+                               </div>
+                            </div>
+
+
+
+                        </div>
                     </div>
+                  
                 </div>
             </div>
             <div class="animate__animated animate__fadeIn hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
