@@ -78,3 +78,15 @@ submit({
         });
     }
 });
+
+const buyNow = document.querySelector('.buy-now');
+const sellNow = document.querySelector('.sell-now');
+[buyNow, sellNow].map(item => {
+    item.onclick = (e) => {
+        item.href = BASE_URL + 'buy';
+        if (!LOGIN) {
+            item.href = '#';
+            login.classList.remove('right-[-400px]');
+        } 
+    }
+})

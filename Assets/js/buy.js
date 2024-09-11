@@ -91,24 +91,28 @@ confirmAddNewCard.onclick = (e) => {
 const sellItems = document.querySelectorAll('.sell-item');
 const currentSellImage = document.querySelector('.current-sell-image');
 const currentSellCoin = document.querySelectorAll('.current-sell-coin');
+const currentBuyImage = document.querySelector('.current-buy-image');
+const currentBuyCoin = document.querySelectorAll('.current-buy-coin');
+
 sellItems.forEach(sellItem => {
     sellItem.onclick = (e) => {
         e.preventDefault();
+        
         const coinCurrent = sellItem.querySelector('.coin-current').textContent;
         const coinCurrentPrice = sellItem.querySelector('.coin-current-price');
         const coinCurrentImage = sellItem.querySelector('.coin-current-image');
 
-        
-        currentSellCoin.forEach(current => {
-            current.textContent = coinCurrent;
-        });
-        currentSellImage.src = coinCurrentImage.src;
-        console.log(coinCurrentImage.src)
-
-
-
-
-
+        if (sellItem.parentElement.classList.contains('cryptocurrencies-buy')) {
+            currentBuyCoin.forEach(current => {
+                current.textContent = coinCurrent;
+            });
+            currentBuyImage.src = coinCurrentImage.src;
+        } else {
+            currentSellCoin.forEach(current => {
+                current.textContent = coinCurrent;
+            });
+            currentSellImage.src = coinCurrentImage.src;
+        }
     }
 });
 
@@ -150,8 +154,197 @@ sellSend.onclick = (e) => {
             }
           });
     }
+}
+
+
+const tradeValueOne = document.querySelector('.select-one');
+const tradeValueTwo = document.querySelector('.select-two');
+const tradeInvert = document.querySelector('.trade-invert');
+const tradeConvert = document.querySelector('.trade-convert');
+
+tradeInvert.onclick = (e) => {
+    e.preventDefault();
+    console.log('Change');
+
+    // Obtener los elementos de las monedas y sus imágenes
+    const coinOne = tradeValueOne.querySelector('.select-current-coin');
+    const imgOne = tradeValueOne.querySelector('.select-current-image');
+    const coinTwo = tradeValueTwo.querySelector('.select-current-coin');
+    const imgTwo = tradeValueTwo.querySelector('.select-current-image');
+
+    // Guardar los valores actuales para el intercambio
+    const tempCoin = coinOne.textContent;
+    const tempImg = imgOne.src;
+
+    // Intercambiar el contenido de las monedas
+    coinOne.textContent = coinTwo.textContent;
+    coinTwo.textContent = tempCoin;
+
+    // Intercambiar las imágenes
+    imgOne.src = imgTwo.src;
+    imgTwo.src = tempImg;
+}
+
+
+
+tradeConvert.onclick = (e) => {
+    e.preventDefault();
+    Swal.fire({
+        title: "Are you sure?",
+        text: `You are convert`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, convert!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Converted",
+            text: "Your convert has been processed.",
+            icon: "success"
+          });
+        }
+      });
+}
+
+
+
+var chart    = document.getElementById('chart').getContext('2d'),
+    gradient = chart.createLinearGradient(0, 0, 0, 450);
+
+gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
+gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.25)');
+gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
+
+
+// var data  = {
+//     labels: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun' ],
+//     datasets: [{
+// 			label: 'Custom Label Name',
+// 			backgroundColor: '#0C122A',
+// 			pointBackgroundColor: 'white',
+//       pointBorderWidth: 3,
+//       pointRadius: 1,
+// 			borderWidth: 5,
+// 			borderColor: '#1B6BFA',
+// 			data: [50, 55, 80, 81, 54, 50]
+//     }]
+// };
+
+var data = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+    datasets: [{
+        label: 'Custom Label Name',
+        backgroundColor: '#0C122A',
+        pointBackgroundColor: 'white',
+        pointBorderWidth: 3,
+        pointRadius: 1,
+        borderWidth: 5,
+        borderColor: '#1B6BFA',
+        data: generateRandomData(10) // Generar 10 datos aleatorios
+    }]
+};
+
+// Función para generar un arreglo de números aleatorios
+function generateRandomData(length) {
+    let randomData = [];
+    for (let i = 0; i < length; i++) {
+        randomData.push(Math.floor(Math.random() * 100)); // Genera números entre 0 y 99
+    }
+    return randomData;
+}
+
+
+
+
+var options = {
+	responsive: true,
+	maintainAspectRatio: true,
+	animation: {
+		easing: 'easeInOutQuad',
+		duration: 520
+	},
+	scales: {
+		xAxes: false,
+		yAxes: false
+	},
+	elements: {
+		line: {
+			tension: 0
+		}
+	},
+	legend: {
+		display: false
+	},
+	point: {
+		backgroundColor: 'white'
+	},
+	tooltips: {
+		titleFontFamily: 'Open Sans',
+		backgroundColor: 'rgba(0,0,0,0.3)',
+		titleFontColor: 'white',
+		caretSize: 5,
+		cornerRadius: 2,
+		xPadding: 10,
+		yPadding: 10
+	}
+};
+
+
+var chartInstance = new Chart(chart, {
+    type: 'line',
+    data: data,
+		options: options
+});
+// Actualizar los datos cada segundo
+setInterval(() => {
+    chartInstance.data.datasets[0].data = generateRandomData(10); // Actualizar con nuevos datos aleatorios
+    chartInstance.update();
+}, 1000);
+
+
+const selectsMain = document.querySelectorAll('.select-main');
+
+if (selectsMain) {
+    selectsMain.forEach(select => {
+        console.log(select)
+        const content = select.parentElement.querySelector('.trade-cryptos');
+        const items = content.querySelectorAll('.trade-item');
+
+        const currentImage = select.querySelector('.select-current-image');
+        const currentCoin = select.querySelector('.select-current-coin');
+
+        select.onclick = (e) => {
+            e.preventDefault();
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden')
+            } else {
+                content.classList.add('hidden')
+            }
+
+        }
 
   
 
+        items.forEach(item => {
+            item.onclick = (e) => {
+                e.preventDefault();
 
+                currentImage.src = item.querySelector('img').src;
+                currentCoin.textContent = item.children[1].textContent;
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden')
+                } else {
+                    content.classList.add('hidden')
+                }
+            }
+        });
+
+
+
+
+    });
 }

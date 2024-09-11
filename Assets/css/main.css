@@ -70,11 +70,11 @@ button.button-purple:hover, a.button-purple:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #aa58fb;
 }
-button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
+button.button-outlined-purple-intensy, a.button-outlined-purple-intensy {
   border: 1px solid #9026FA;
   color: #9026FA;
 }
-button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
+button.button-outlined-purple-intensy:hover, a.button-outlined-purple-intensy:hover {
   transform: translateY(-3px);
   background: #9026FA;
   color: #fff;
@@ -87,11 +87,11 @@ button.button-orange:hover, a.button-orange:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #fc8249;
 }
-button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
+button.button-outlined-orange-intensy, a.button-outlined-orange-intensy {
   border: 1px solid #FB6017;
   color: #FB6017;
 }
-button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
+button.button-outlined-orange-intensy:hover, a.button-outlined-orange-intensy:hover {
   transform: translateY(-3px);
   background: #FB6017;
   color: #fff;
@@ -104,11 +104,11 @@ button.button-lightblue:hover, a.button-lightblue:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #60ccfd;
 }
-button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
+button.button-outlined-lightblue-intensy, a.button-outlined-lightblue-intensy {
   border: 1px solid #2EBCFC;
   color: #2EBCFC;
 }
-button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
+button.button-outlined-lightblue-intensy:hover, a.button-outlined-lightblue-intensy:hover {
   transform: translateY(-3px);
   background: #2EBCFC;
   color: #fff;
@@ -121,11 +121,11 @@ button.button-intensy:hover, a.button-intensy:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px #705bfa;
 }
-button.button-outlined-blue-intensy, a.button-outlined-blue-intensy {
+button.button-outlined-intensy-intensy, a.button-outlined-intensy-intensy {
   border: 1px solid #4529F9;
   color: #4529F9;
 }
-button.button-outlined-blue-intensy:hover, a.button-outlined-blue-intensy:hover {
+button.button-outlined-intensy-intensy:hover, a.button-outlined-intensy-intensy:hover {
   transform: translateY(-3px);
   background: #4529F9;
   color: #fff;

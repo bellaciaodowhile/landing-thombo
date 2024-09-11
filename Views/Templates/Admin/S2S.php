@@ -1,0 +1,1 @@
+<h1 class="text-4xl text-white mt-10">S2S</h1>

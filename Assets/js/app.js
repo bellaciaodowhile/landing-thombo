@@ -222,7 +222,6 @@ const triggerLogin = document.querySelectorAll('.trigger-login');
 triggerLogin.forEach(el => {
     el.onclick = (e) => {
         e.preventDefault();
-        console.log('Estas abriendo el login')
         login.classList.remove('right-[-400px]');
     }
 });
