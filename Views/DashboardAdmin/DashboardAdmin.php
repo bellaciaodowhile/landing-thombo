@@ -130,7 +130,7 @@
                         <button class="button-blue rounded-full py-2 px-6 text-xs font-bold">Log Out</button>
                     </div>
                 </div>
-                <div class="breadcumb flex items-center mt-10 text-slate-">
+                <div class="breadcumb flex items-center mt-10">
                     <span class="text-xs"><?php echo $data['breadcumb']; ?></span>
                     <i class="material-icons-outlined text-xs text-slate-500">chevron_right</i>
                     <span class="text-xs">

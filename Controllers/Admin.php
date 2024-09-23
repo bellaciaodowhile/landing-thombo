@@ -12,7 +12,7 @@
             $data['js'] = ['admin.js'];
             $data['title_page'] = 'Thombo | Admin';
             $data['section'] = 'Home';
-            $data['breadcumb'] = '';
+            $data['breadcumb'] = 'Home';
 
             $this->views->getView('DashboardAdmin', 'DashboardAdmin', $data);
         }
@@ -86,6 +86,33 @@
             $data['title_page'] = 'Thombo | Setting S2S';
             $data['section'] = 'Settings S2S';
             $data['breadcumb'] = 'Server to Server';
+            
+            $this->views->getView('DashboardAdmin', 'DashboardAdmin', $data);
+        }
+        public function fin() {
+            $data['title_page'] = 'Thombo | Uploads';
+            $data['js'] = ['admin.js'];
+            $data['title_page'] = 'Thombo | Uploads';
+            $data['section'] = 'Fin';
+            $data['breadcumb'] = 'File Uploads';
+            
+            $this->views->getView('DashboardAdmin', 'DashboardAdmin', $data);
+        }
+        public function binary() {
+            $data['title_page'] = 'Thombo | Uploads';
+            $data['js'] = ['admin.js'];
+            $data['title_page'] = 'Thombo | Uploads';
+            $data['section'] = 'Binary';
+            $data['breadcumb'] = 'File Uploads';
+            
+            $this->views->getView('DashboardAdmin', 'DashboardAdmin', $data);
+        }
+        public function btcfiles() {
+            $data['title_page'] = 'Thombo | Uploads';
+            $data['js'] = ['admin.js'];
+            $data['title_page'] = 'Thombo | Uploads';
+            $data['section'] = 'BTC Files';
+            $data['breadcumb'] = 'File Uploads';
             
             $this->views->getView('DashboardAdmin', 'DashboardAdmin', $data);
         }

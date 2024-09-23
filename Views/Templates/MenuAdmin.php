@@ -121,28 +121,84 @@
                         <span class="text-xs opacity-70 capitalize">Uploads</span>
                     </div>
                 </a>
-                <div class="mt-3 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
+                <a href="<?php echo BASE_URL . 'admin/fin'; ?>" class="mt-3 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
                     <div class="flex gap-2 items-center">
                         <span class="text-xs opacity-70 capitalize">fin</span>
                     </div>
-                </div>
-                <div class="mt-3 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
+                </a>
+                <a href="<?php echo BASE_URL . 'admin/binary'; ?>" class="mt-3 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
                     <div class="flex gap-2 items-center">
                         <span class="text-xs opacity-70 capitalize">binary</span>
                     </div>
-                </div>
-                <div class="mt-3 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
+                </a>
+                <a href="<?php echo BASE_URL . 'admin/btcfiles'; ?>" class="mt-3 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
                     <div class="flex gap-2 items-center">
                         <span class="text-xs opacity-70">BTC Files</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="uppercase text-slate-600 font-bold text-xs mt-5">settings</div>
-        <div class="mt-3 rounded-xl p-4 flex items-center justify-between cursor-pointer duration-300 hover:bg-[#00000026]">
+        <!-- <div class="mt-3 rounded-xl p-4 flex items-center justify-between cursor-pointer duration-300 hover:bg-[#00000026]">
             <div class="flex gap-2">
                 <i class="material-icons-outlined text-slate-500">settings</i>
                 <span class="text-sm opacity-70">Settings</span>
+            </div>
+        </div> -->
+        <div class="relative">
+            <div class="mt-3 rounded-xl p-4 flex items-center justify-between cursor-pointer duration-300 hover:bg-[#00000026] item-menu expand-more">
+                <div class="flex gap-2">
+                    <i class="material-icons-outlined text-slate-500">settings</i>
+                    <span class="text-sm opacity-70">Settings</span>
+                </div>
+                <i class="material-icons-outlined opacity-70 text-sm">expand_more</i>
+            </div>
+            <div class="content-item-menu pl-5 border-l border-slate-300 w-[93%] ml-auto h-[0px] duration-300 invisible overflow-hidden" heightContent="210px">
+                <div class="mt-1 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
+                    <form class="w-full">
+                        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Choose currency</option>
+                            <option value="1">USD</option>
+                            <option value="2">EUR</option>
+                            <option value="3">MXN</option>
+                            <option value="4">ARS</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="mt-1 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
+                    <form class="w-full">
+                        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Choose time zone</option>
+                            <option value="1">UTC</option>
+                            <option value="2">Eastern Standard Time (EST)</option>
+                            <option value="3">Pacific Standard Time (PST)</option>
+                            <option value="4">Central European Time (CET)</option>
+                            <option value="5">Central European Summer Time (CEST)</option>
+                            <option value="6">Greenwich Mean Time (GMT)</option>
+                            <option value="7">Argentina Time (ART)</option>
+                            <option value="8">Brazil Time (BRT)</option>
+                            <option value="9">Japan Standard Time (JST)</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="mt-1 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-[#00000026] item-menu">
+                    <form class="w-full">
+                        <select id="dateFormats" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Choose date format</option>
+                            <option value="1">MM/DD/YYYY</option>
+                            <option value="2">DD/MM/YYYY</option>
+                            <option value="3">YYYY-MM-DD</option>
+                            <option value="4">DD-MMM-YYYY</option>
+                            <option value="5">MMM DD, YYYY</option>
+                            <option value="6">YYYY/MM/DD</option>
+                            <option value="7">MM-DD-YYYY</option>
+                            <option value="8">YYYY.MM.DD</option>
+                            <option value="9">MMMM DD, YYYY</option>
+                        </select>
+                    </form>
+                </div>
+
+
             </div>
         </div>
 

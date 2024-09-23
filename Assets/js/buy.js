@@ -348,3 +348,26 @@ if (selectsMain) {
 
     });
 }
+
+const triggerTrade = document.querySelectorAll('.content-trade button');
+triggerTrade.forEach(btn => {
+    btn.onclick = (e) => {
+        e.preventDefault();
+
+        const imageTradeSelectOne = document.querySelector('.select-one img');
+        const currentCoinSelectOne = document.querySelector('.select-one .select-current-coin');
+
+        const currentImage = btn.parentElement.parentElement.children[1].querySelector('img')
+        const currentCoin = btn.parentElement.parentElement.children[1].children[2]
+
+        imageTradeSelectOne.src = currentImage.src
+        currentCoinSelectOne.textContent = currentCoin.textContent
+
+        const color = btn.attributes.color.textContent
+        console.log(chartInstance.data.datasets[0].borderColor)
+        chartInstance.data.datasets[0].borderColor = color
+        chartInstance.update();
+
+    }
+
+});

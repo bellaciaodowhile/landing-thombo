@@ -10,39 +10,7 @@
         <div class="text-xl text-white">Browse files to upload</div>
         <input type="file" hidden id="uploadData">
     </div>
-    <div class="data-upload grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
-
-        <!-- <div class="flex justify-between items-center p-3 border border-green-500 rounded-lg border-dashed">
-            <div class="flex items-center gap-2">
-                <i class="material-icons-outlined text-blue-500 text-md">upload_file</i>
-                <span class="text-white">File</span>
-            </div>
-            <i class="material-icons-outlined text-red-500 text-md cursor-pointer delete-file">delete</i>
-        </div>
-        <div class="flex justify-between items-center p-3 border border-green-500 rounded-lg border-dashed">
-            <div class="flex items-center gap-2">
-                <i class="material-icons-outlined text-blue-500 text-md">upload_file</i>
-                <span class="text-white">File</span>
-            </div>
-            <i class="material-icons-outlined text-red-500 text-md cursor-pointer delete-file">delete</i>
-        </div>
-        <div class="flex justify-between items-center p-3 border border-green-500 rounded-lg border-dashed">
-            <div class="flex items-center gap-2">
-                <i class="material-icons-outlined text-blue-500 text-md">upload_file</i>
-                <span class="text-white">File</span>
-            </div>
-            <i class="material-icons-outlined text-red-500 text-md cursor-pointer delete-file">delete</i>
-        </div>
-
-        <div class="flex justify-between items-center p-3 border border-green-500 rounded-lg border-dashed">
-            <div class="flex items-center gap-2">
-                <i class="material-icons-outlined text-blue-500 text-md">upload_file</i>
-                <span class="text-white">File</span>
-            </div>
-            <i class="material-icons-outlined text-red-500 text-md cursor-pointer delete-file">delete</i>
-        </div> -->
-        
-    </div>
+    <div class="data-upload grid grid-cols-1 md:grid-cols-3 gap-5 mt-5"></div>
 
 
 

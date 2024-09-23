@@ -133,8 +133,8 @@
 
                 <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
                     <div class="bg-white rounded-xl p-5 md:p-10 h-auto realtime-card">
-                        <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="USDT" class="mx-auto w-20 current-buy-image">
-                        <div class="mt-16 text-gray-400 text-center">You are buying</div>
+                        <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="USDT" class="mx-auto w-10 current-buy-image mt-16">
+                        <div class="mt-5 text-gray-400 text-center">You are buying</div>
                         <div class="flex flex-wrap md:flex-nowrap border-b border-gray-100 mt-5 justify-center">
                             <input type="number" class="outline-0 text-black font-bold inline-block text-right w-48 pb-3 text-xl md:text-6xl realtime-input" value="1000" min="0">
                             <span class="current-coin font-light text-gray-500 block uppercase md:pt-4 text-md md:text-5xl current-buy-coin">usdt</span>
@@ -315,8 +315,8 @@
             <div class="animate__animated animate__fadeIn hidden p-4 rounded-lg" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
             <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
                     <div class="bg-white rounded-xl p-5 md:p-10 h-auto realtime-card">
-                        <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="USDT" class="mx-auto w-20 current-sell-image">
-                        <div class="mt-16 text-gray-400 text-center">You are selling</div>
+                        <img src="<?php echo media() . 'images/coins/icons/usdt.png'; ?>" alt="USDT" class="mx-auto w-10 current-sell-image mt-16">
+                        <div class="mt-5 text-gray-400 text-center">You are selling</div>
                         <div class="flex flex-wrap md:flex-nowrap border-b border-gray-100 mt-5 justify-center">
                             <input type="number" class="outline-0 text-black font-bold inline-block text-right w-48 pb-3 text-xl md:text-6xl realtime-input sell-value" value="20" min="0">
                             <span class="current-coin font-light text-gray-500 block uppercase md:pt-4 text-md md:text-5xl current-sell-coin">usdt</span>
@@ -336,7 +336,7 @@
                                 <span class="text-gray-300"><span class="fee">0.02</span> EUR</span>
                             </div>
                             <div class="flex flex-wrap justify-between text-sm">
-                                <div class="text-gray-300">You pay</div>
+                                <div class="text-gray-300">You receive</div>
                                 <span class="text-gray-800 font-bold"><span class="total-price">19.04</span> EUR</span>
                             </div>
                             <div class="flex jutify-center">
@@ -509,7 +509,7 @@
                             <div class="text-xl font-bold mb-6">My Portfolio</div>  
                             <div class="flex flex-col gap-y-5">
                                 <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
-                                    <img src="<?php echo media() . 'images/coins/portfolio/icon.png'; ?>" alt="1" class="w-auto">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/6.png'; ?>" alt="1" class="w-6 h-6 my-auto">
                                     <div class="flex flex-wrap items-center justify-between w-full">
                                         <div class="flex flex-col gap-y-1">
                                             <div class="text-sm font-bold">Ethereum</div>
@@ -522,7 +522,7 @@
                                     </div>
                                 </div>
                                 <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
-                                    <img src="<?php echo media() . 'images/coins/portfolio/icon-1.png'; ?>" alt="1" class="w-auto">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/1.png'; ?>" alt="1" class="w-6 h-6 my-auto">
                                     <div class="flex flex-wrap items-center justify-between w-full">
                                         <div class="flex flex-col gap-y-1">
                                             <div class="text-sm font-bold">Bitcoin</div>
@@ -535,41 +535,41 @@
                                     </div>
                                 </div>
                                 <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
-                                    <img src="<?php echo media() . 'images/coins/portfolio/icon-2.png'; ?>" alt="1" class="w-auto">
+                                    <img src="<?php echo media() . 'images/coins/trade/4.png'; ?>" alt="1" class="w-6 h-6 my-auto">
+                                    <div class="flex flex-wrap items-center justify-between w-full">
+                                        <div class="flex flex-col gap-y-1">
+                                            <div class="text-sm font-bold">Ripple</div>
+                                            <span class="opacity-80 text-xs">$3,245.03</span>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-y-1">
+                                            <div class="text-xs text-green-500">+14.25%</div>
+                                            <span class="font-bold text-xs">0.12543 XRP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/4.png'; ?>" alt="1" class="w-6 h-6 my-auto">
+                                    <div class="flex flex-wrap items-center justify-between w-full">
+                                        <div class="flex flex-col gap-y-1">
+                                            <div class="text-sm font-bold">Monero</div>
+                                            <span class="opacity-80 text-xs">$3,245.03</span>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-y-1">
+                                            <div class="text-xs text-orange-500">-2.00%</div>
+                                            <span class="font-bold text-xs">0.12543 MRN</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
+                                    <img src="<?php echo media() . 'images/coins/icons-sell/3.png'; ?>" alt="1" class="w-6 h-6 my-auto">
                                     <div class="flex flex-wrap items-center justify-between w-full">
                                         <div class="flex flex-col gap-y-1">
                                             <div class="text-sm font-bold">Litecoin</div>
                                             <span class="opacity-80 text-xs">$3,245.03</span>
                                         </div>
                                         <div class="flex flex-col items-end gap-y-1">
-                                            <div class="text-xs text-green-500">+14.25%</div>
-                                            <span class="font-bold text-xs">0.12543 LTC</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
-                                    <img src="<?php echo media() . 'images/coins/portfolio/icon-3.png'; ?>" alt="1" class="w-auto">
-                                    <div class="flex flex-wrap items-center justify-between w-full">
-                                        <div class="flex flex-col gap-y-1">
-                                            <div class="text-sm font-bold">Solana</div>
-                                            <span class="opacity-80 text-xs">$3,245.03</span>
-                                        </div>
-                                        <div class="flex flex-col items-end gap-y-1">
-                                            <div class="text-xs text-orange-500">-2.00%</div>
-                                            <span class="font-bold text-xs">0.12543 SOL</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-portfolio flex flex-wrap md:flex-nowrap gap-3">
-                                    <img src="<?php echo media() . 'images/coins/portfolio/icon-4.png'; ?>" alt="1" class="w-auto">
-                                    <div class="flex flex-wrap items-center justify-between w-full">
-                                        <div class="flex flex-col gap-y-1">
-                                            <div class="text-sm font-bold">Binance Coin</div>
-                                            <span class="opacity-80 text-xs">$3,245.03</span>
-                                        </div>
-                                        <div class="flex flex-col items-end gap-y-1">
                                             <div class="text-xs text-green-500">+12.00%</div>
-                                            <span class="font-bold text-xs">0.12543 BNB</span>
+                                            <span class="font-bold text-xs">0.12543 LTC</span>
                                         </div>
                                     </div>
                                 </div>
@@ -673,7 +673,7 @@
                                         <th scope="col" class="font-light text-sm px-3 py-2">Trade</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="content-trade">
                                     <tr class="mt-5">
                                         <td scope="row" class="px-5 py-4 font-semibold">1</td>
                                         <td scope="row" class="px-5 py-4 flex items-center">
@@ -687,7 +687,7 @@
                                             <img src="<?php echo media() . 'images/coins/trade/chart/1.png'; ?>" alt="1" class="w-auto mr-2"> 
                                         </td>
                                         <td scope="row" class="px-5 py-4">
-                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full">
+                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full" color="#F4A937">
                                                 Trade
                                             </button>
                                         </td>
@@ -705,7 +705,7 @@
                                             <img src="<?php echo media() . 'images/coins/trade/chart/2.png'; ?>" alt="1" class="w-auto mr-2"> 
                                         </td>
                                         <td scope="row" class="px-5 py-4">
-                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full">
+                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full" color="#4E4E4F">
                                                 Trade
                                             </button>
                                         </td>
@@ -723,7 +723,7 @@
                                             <img src="<?php echo media() . 'images/coins/trade/chart/3.png'; ?>" alt="1" class="w-auto mr-2"> 
                                         </td>
                                         <td scope="row" class="px-5 py-4">
-                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full">
+                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full" color="#1C6E9B">
                                                 Trade
                                             </button>
                                         </td>
@@ -741,7 +741,7 @@
                                             <img src="<?php echo media() . 'images/coins/trade/chart/1.png'; ?>" alt="1" class="w-auto mr-2"> 
                                         </td>
                                         <td scope="row" class="px-5 py-4">
-                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full">
+                                            <button class="button-outlined-blue-intensy py-1 px-4 rounded-full" color="#F4A937">
                                                 Trade
                                             </button>
                                         </td>
